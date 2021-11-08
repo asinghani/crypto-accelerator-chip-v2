@@ -14,12 +14,11 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 
-# ---- Test patterns for project striVe ----
 
 .SUFFIXES:
 .SILENT: clean all
 
-PATTERNS = io_ports la_test1 la_test2 wb_port mprj_stimulus
+PATTERNS = aes dino_vga sha256
 
 all:  ${PATTERNS}
 	for i in ${PATTERNS}; do \
