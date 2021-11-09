@@ -31,8 +31,8 @@ set ::env(CLOCK_PERIOD) "35"
 set ::env(FP_PIN_ORDER_CFG) $script_dir/pin_order.cfg
 
 set ::env(SYNTH_MAX_FANOUT) 5
-set ::env(FP_CORE_UTIL) 20
-set ::env(PL_TARGET_DENSITY) 0.24
+set ::env(FP_CORE_UTIL) 16
+set ::env(PL_TARGET_DENSITY) 0.20
 set ::env(CELL_PAD) 4
 set ::env(SYNTH_NO_FLAT) 0
 
@@ -65,6 +65,6 @@ set ::env(GLB_RT_MAXLAYER) 5
 set ::env(VDD_NETS) [list {vccd1}]
 set ::env(GND_NETS) [list {vssd1}]
 
-set ::env(DIODE_INSERTION_STRATEGY) 4 
+set ::env(DIODE_INSERTION_STRATEGY) 4
 # If you're going to use multiple power domains, then disable cvc run.
 set ::env(RUN_CVC) 1
