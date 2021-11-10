@@ -25,14 +25,14 @@ set ::env(DESIGN_IS_CORE) 0
 
 set ::env(CLOCK_PORT) "wb_clk_i"
 set ::env(CLOCK_NET) "wb_clk_i"
-set ::env(CLOCK_PERIOD) "35"
+set ::env(CLOCK_PERIOD) "33"
 
 
 set ::env(FP_PIN_ORDER_CFG) $script_dir/pin_order.cfg
 
 set ::env(SYNTH_MAX_FANOUT) 5
-set ::env(FP_CORE_UTIL) 16
-set ::env(PL_TARGET_DENSITY) 0.20
+set ::env(FP_CORE_UTIL) 25
+set ::env(PL_TARGET_DENSITY) 0.29
 set ::env(CELL_PAD) 4
 set ::env(SYNTH_NO_FLAT) 0
 
