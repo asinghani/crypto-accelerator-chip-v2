@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2020 Efabless Corporation
+# SPDX-FileCopyrightText: 2021 Anish Singhani
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -25,14 +25,14 @@ set ::env(DESIGN_IS_CORE) 0
 
 set ::env(CLOCK_PORT) "wb_clk_i"
 set ::env(CLOCK_NET) "wb_clk_i"
-set ::env(CLOCK_PERIOD) "33"
+set ::env(CLOCK_PERIOD) "38"
 
 
 set ::env(FP_PIN_ORDER_CFG) $script_dir/pin_order.cfg
 
 set ::env(SYNTH_MAX_FANOUT) 5
-set ::env(FP_CORE_UTIL) 25
-set ::env(PL_TARGET_DENSITY) 0.29
+set ::env(FP_CORE_UTIL) 22
+set ::env(PL_TARGET_DENSITY) 0.26
 set ::env(CELL_PAD) 4
 set ::env(SYNTH_NO_FLAT) 0
 

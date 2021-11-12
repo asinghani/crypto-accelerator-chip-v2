@@ -1,4 +1,4 @@
-//SPDX-FileCopyrightText: 2020 Anish Singhani
+//SPDX-FileCopyrightText: 2021 Anish Singhani
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -22,9 +22,11 @@
 `ifdef SIM
 `include "accelerator/crypto_accelerator.v"
 `include "accelerator/dino/dinogame.v"
+`include "accelerator/CoreTop.v"
 `else
 `include "./crypto_accelerator.v"
 `include "./dino/dinogame.v"
+`include "./CoreTop.v"
 `endif
 
 `define DINO1_JUMP_PIN 12
@@ -110,6 +112,14 @@ wire [127:0] la_data_in;
 wire [127:0] la_data_out;
 wire [127:0] la_oen;
 
+CoreTop rf0_core (
+    .clock(clk),
+    .reset(rst),
+    .io_la_data_in(la_data_in),
+    .io_la_data_out(la_data_out),
+    .io_la_oenb(la_oen)
+);
+
 `AES_CORE aes (
 	.clock(clk),
 	.reset(rst),
@@ -192,17 +202,17 @@ dinogame game1 (
     .vga_pixel(io_out[`DINO1_PIX_PIN]),
 
 `ifdef DINO_CONFIG
-    .dbg_reset(la_data_out[0]),
-    .dbg_halt(la_data_out[1]),
-    .dbg_pixel(la_data_out[2]),
-    .dbg_score(la_data_out[18:3]),
-    .dbg_speed(la_data_out[42:19]),
-    .dbg_scrolladdr(la_data_out[53:43]),
+    .dbg_reset(),
+    .dbg_halt(),
+    .dbg_pixel(),
+    .dbg_score(),
+    .dbg_speed(),
+    .dbg_scrolladdr(),
 
-    .cfg_accel(la_data_in[4:1]),
+    .cfg_accel(4),
 `endif
 
-    .cfg_speed(la_data_in[8:5]),
+    .cfg_speed(),
 
     .clk(clk),
     .sys_rst(dino_rst)

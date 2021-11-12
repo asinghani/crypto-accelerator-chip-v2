@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2020 Efabless Corporation
+// SPDX-FileCopyrightText: 2021 Anish Singhani
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,20 +14,6 @@
 // SPDX-License-Identifier: Apache-2.0
 
 `default_nettype none
-/*
- *-------------------------------------------------------------
- *
- * user_project_wrapper
- *
- * This wrapper enumerates all of the pins available to the
- * user for the user project.
- *
- * An example user project is provided in this wrapper.  The
- * example should be removed and replaced with the actual
- * user project.
- *
- *-------------------------------------------------------------
- */
 
 module user_project_wrapper #(
     parameter BITS = 32
@@ -77,10 +63,6 @@ module user_project_wrapper #(
     // User maskable interrupt signals
     output [2:0] user_irq
 );
-
-/*--------------------------------------*/
-/* User project is instantiated  here   */
-/*--------------------------------------*/
 
 accelerator_top mprj (
 `ifdef USE_POWER_PINS

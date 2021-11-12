@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2020 Efabless Corporation
+# SPDX-FileCopyrightText: 2021 Anish Singhani
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -18,7 +18,7 @@
 .SUFFIXES:
 .SILENT: clean all
 
-PATTERNS = aes dino_vga sha256
+PATTERNS = aes dino_vga sha256 rf0
 
 all:  ${PATTERNS}
 	for i in ${PATTERNS}; do \

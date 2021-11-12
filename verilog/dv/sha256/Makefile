@@ -34,13 +34,14 @@ UPRJ_BEHAVIOURAL_MODELS = ../
 GCC_PATH?=/ef/apps/bin
 GCC_PREFIX?=riscv32-unknown-elf
 
+PATTERN = sha256
+
 ## Simulation mode: RTL/GL
-SIM_DEFINES = -DFUNCTIONAL -DSIM
+SIM_DEFINES = -DFUNCTIONAL -DSIM -DSPOOF_FAST_FLASH=\"$(PATTERN).hex\"
 SIM?=RTL
 
 .SUFFIXES:
 
-PATTERN = sha256
 
 all:  ${PATTERN:=.vcd}
 
